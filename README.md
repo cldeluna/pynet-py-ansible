@@ -55,6 +55,16 @@ week1-json-output.json  week1-yaml-output.yml
 ###YAML/JSON READ
 
 ```
+
+(applied_python)[cdeluna@ip-172-30-0-4 scratch]$ python w1-07-yml-json-r.py
+
+Usage: w1-07-yml-json-r.py <path to directory in which to look for JSON or YML files> 
+This script will find all files with a .yml or .json file extension and Pretty Print each file.
+Example: python w1-07-yml-json-r.py "."
+
+
+
+
 (applied_python)[cdeluna@ip-172-30-0-4 scratch]$ python w1-07-yml-json-r.py "."
 week1-json-output.json
 week1-yaml-output.yml
