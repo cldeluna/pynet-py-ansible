@@ -52,4 +52,96 @@ week1-json-output.json  week1-yaml-output.yml
 
 ```
 
+###YAML/JSON READ
 
+```
+(applied_python)[cdeluna@ip-172-30-0-4 scratch]$ python w1-07-yml-json-r.py "."
+week1-json-output.json
+week1-yaml-output.yml
+donut.json
+
+
+************** Printing JSON File Contents ************** 
+
+('File name: ', 'week1-json-output.json')
+[{u'vlan': u'1,3,101,103-106,300,310,340,350,500,560-564,570-574,581,585,590-591'},
+ {u'name': u'sin1-default', u'vlan': u'3'},
+ {u'name': u'sin1-nvn-core-101', u'vlan': u'101'},
+ {u'name': u'sin1-nvn-monitor-103', u'vlan': u'103'},
+ {u'name': u'sin1-gvn-mgmt-104', u'vlan': u'104'},
+ {u'name': u'sin1-gvn-vmotion-mgmt-105', u'vlan': u'105'},
+ {u'name': u'sin1-nvn-sec-106', u'vlan': u'106'},
+ {u'name': u'sin1-uc-vn-300', u'vlan': u'300'},
+ {u'name': u'sin1-uc-vn-310-dmz', u'vlan': u'310'},
+ {u'name': u'sin1-uc-vn-vmotion-340', u'vlan': u'340'},
+ {u'name': u'sin1-uc-vn-350', u'vlan': u'350'},
+ {u'name': u'sin1-avn-airsupport-500', u'vlan': u'500'},
+ {u'name': u'sin1-gvn-gtlib-pd-560', u'vlan': u'560'},
+ {u'name': u'sin1-gvn-gservers-pd-561', u'vlan': u'561'},
+ {u'name': u'sin1-gvn-gvoip-pd-562', u'vlan': u'562'},
+ {u'name': u'sin1-gvn-gafe-pd-563', u'vlan': u'563'},
+ {u'name': u'sin1-gvn-gmgmt-pd-564', u'vlan': u'564'},
+ {u'name': u'sin1-gvn-gtlib-570', u'vlan': u'570'},
+ {u'name': u'sin1-gvn-gservers-571', u'vlan': u'571'},
+ {u'name': u'sin1-gvn-gvoip-572', u'vlan': u'572'},
+ {u'name': u'sin1-gvn-gafe-573', u'vlan': u'573'},
+ {u'name': u'sin1-gvn-gmgmt-574', u'vlan': u'574'},
+ {u'name': u'sin1-gvn-gvmotion-581', u'vlan': u'581'},
+ {u'name': u'sin1-gvn-server-pxe-585', u'vlan': u'585'},
+ {u'name': u'sin1-svn-590', u'vlan': u'590'},
+ {u'name': u'sin1-svn-aaa-591', u'vlan': u'591'}]
+
+
+************** Printing YAML File Contents ************** 
+
+('File name: ', 'week1-yaml-output.yml')
+[{'vlan': '1,3,101,103-106,300,310,340,350,500,560-564,570-574,581,585,590-591'},
+ {'name': 'sin1-default', 'vlan': '3'},
+ {'name': 'sin1-nvn-core-101', 'vlan': '101'},
+ {'name': 'sin1-nvn-monitor-103', 'vlan': '103'},
+ {'name': 'sin1-gvn-mgmt-104', 'vlan': '104'},
+ {'name': 'sin1-gvn-vmotion-mgmt-105', 'vlan': '105'},
+ {'name': 'sin1-nvn-sec-106', 'vlan': '106'},
+ {'name': 'sin1-uc-vn-300', 'vlan': '300'},
+ {'name': 'sin1-uc-vn-310-dmz', 'vlan': '310'},
+ {'name': 'sin1-uc-vn-vmotion-340', 'vlan': '340'},
+ {'name': 'sin1-uc-vn-350', 'vlan': '350'},
+ {'name': 'sin1-avn-airsupport-500', 'vlan': '500'},
+ {'name': 'sin1-gvn-gtlib-pd-560', 'vlan': '560'},
+ {'name': 'sin1-gvn-gservers-pd-561', 'vlan': '561'},
+ {'name': 'sin1-gvn-gvoip-pd-562', 'vlan': '562'},
+ {'name': 'sin1-gvn-gafe-pd-563', 'vlan': '563'},
+ {'name': 'sin1-gvn-gmgmt-pd-564', 'vlan': '564'},
+ {'name': 'sin1-gvn-gtlib-570', 'vlan': '570'},
+ {'name': 'sin1-gvn-gservers-571', 'vlan': '571'},
+ {'name': 'sin1-gvn-gvoip-572', 'vlan': '572'},
+ {'name': 'sin1-gvn-gafe-573', 'vlan': '573'},
+ {'name': 'sin1-gvn-gmgmt-574', 'vlan': '574'},
+ {'name': 'sin1-gvn-gvmotion-581', 'vlan': '581'},
+ {'name': 'sin1-gvn-server-pxe-585', 'vlan': '585'},
+ {'name': 'sin1-svn-590', 'vlan': '590'},
+ {'name': 'sin1-svn-aaa-591', 'vlan': '591'}]
+
+
+************** Printing JSON File Contents ************** 
+
+('File name: ', 'donut.json')
+{u'batters': {u'batter': [{u'id': u'1001', u'type': u'Regular'},
+                          {u'id': u'1002', u'type': u'Chocolate'},
+                          {u'id': u'1003', u'type': u'Blueberry'},
+                          {u'id': u'1004', u'type': u"Devil's Food"}]},
+ u'id': u'0001',
+ u'name': u'Cake',
+ u'ppu': 0.55,
+ u'topping': [{u'id': u'5001', u'type': u'None'},
+              {u'id': u'5002', u'type': u'Glazed'},
+              {u'id': u'5005', u'type': u'Sugar'},
+              {u'id': u'5007', u'type': u'Powdered Sugar'},
+              {u'id': u'5006', u'type': u'Chocolate with Sprinkles'},
+              {u'id': u'5003', u'type': u'Chocolate'},
+              {u'id': u'5004', u'type': u'Maple'}],
+ u'type': u'donut'}
+(applied_python)[cdeluna@ip-172-30-0-4 scratch]$ 
+
+
+```
