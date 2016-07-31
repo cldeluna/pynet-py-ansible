@@ -10,12 +10,16 @@ All git/GitHub actions completed.
 ###YAML/JSON Write:
 
 (applied_python)[cdeluna@ip-172-30-0-4 scratch]$ ls week1*
+
 ls: cannot access week1*: No such file or directory
+
 (applied_python)[cdeluna@ip-172-30-0-4 scratch]$ python w1-06-yml-json-w.py sin-dist-shrunonly.txt 
 
 
 **************List of Dictionaries*****************
+
 ('Type is ', <type 'list'>)
+
 ('Total Vlans Found: ', '26')
 
 
@@ -72,6 +76,7 @@ ls: cannot access week1*: No such file or directory
 {'vlan': '591', 'name': 'sin1-svn-aaa-591'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
 
 (applied_python)[cdeluna@ip-172-30-0-4 scratch]$ ls week1*
+
 week1-json-output.json  week1-yaml-output.yml
 
 (applied_python)[cdeluna@ip-172-30-0-4 scratch]$ 
