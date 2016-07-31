@@ -20,10 +20,15 @@ ls: cannot access week1*: No such file or directory
 
 
 {'vlan': '1,3,101,103-106,300,310,340,350,500,560-564,570-574,581,585,590-591'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 1)
+
 {'vlan': '3', 'name': 'sin1-default'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
+
 {'vlan': '101', 'name': 'sin1-nvn-core-101'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
+
 {'vlan': '103', 'name': 'sin1-nvn-monitor-103'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
+
 {'vlan': '104', 'name': 'sin1-gvn-mgmt-104'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
+
 {'vlan': '105', 'name': 'sin1-gvn-vmotion-mgmt-105'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
 {'vlan': '106', 'name': 'sin1-nvn-sec-106'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
 {'vlan': '300', 'name': 'sin1-uc-vn-300'} (' Type = ', <type 'dict'>) (' Number of Elements = ', 2)
