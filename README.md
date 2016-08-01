@@ -155,3 +155,60 @@ donut.json
 
 
 ```
+###CiscoConfigParse Parent/Child
+
+```
+D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA>python w1-08-ccp-crypto.py
+
+====PARENT LEVEL ITEMS===
+crypto map CRYPTO 10 ipsec-isakmp
+crypto map CRYPTO 20 ipsec-isakmp
+crypto map CRYPTO 30 ipsec-isakmp
+crypto map CRYPTO 40 ipsec-isakmp
+crypto map CRYPTO 50 ipsec-isakmp
+
+
+
+===PARENT=== crypto map CRYPTO 10 ipsec-isakmp
+=======CHILD LEVEL ITEMS======
+ set peer 1.1.1.1
+ set transform-set AES-SHA
+ set pfs group5
+ match address VPN-TEST1
+
+|
+===PARENT=== crypto map CRYPTO 20 ipsec-isakmp
+=======CHILD LEVEL ITEMS======
+ set peer 2.2.2.1
+ set transform-set AES-SHA
+ set pfs group2
+ match address VPN-TEST2
+
+|
+===PARENT=== crypto map CRYPTO 30 ipsec-isakmp
+=======CHILD LEVEL ITEMS======
+ set peer 3.3.3.1
+ set transform-set AES-SHA
+ set pfs group2
+ match address VPN-TEST3
+
+|
+===PARENT=== crypto map CRYPTO 40 ipsec-isakmp
+=======CHILD LEVEL ITEMS======
+ set peer 4.4.4.1
+ set transform-set AES-SHA
+ set pfs group5
+ match address VPN-TEST4
+
+|
+===PARENT=== crypto map CRYPTO 50 ipsec-isakmp
+=======CHILD LEVEL ITEMS======
+ set peer 5.5.5.1
+ set transform-set 3DES-SHA
+ set pfs group5
+ match address VPN-TEST5
+
+|
+
+
+```
