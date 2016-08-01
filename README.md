@@ -8,6 +8,7 @@ Week 1 - 2016-07-28
 All git/GitHub actions completed.
 
 ###YAML/JSON Write:
+This scripts takes in one argument, a cisco based configuration file with vlan information.  Using CiscoConfigParse, the file is parsed and the vlan parent child information is extracted.  The resulting elements are split using a space as a delimiter and elements 0 and 1 are used as key and value pairs respectively to generate a list of dictionaries.  The resulting data structures are saved in YAML and JSON formatted files.  The stdout output shows each element alont with the element type and the number of elements.
 
 ```
 (applied_python)[cdeluna@ip-172-30-0-4 scratch]$ ls week1*
@@ -155,7 +156,7 @@ donut.json
 
 
 ```
-###CiscoConfigParse Parent/Child
+###CiscoConfigParse Parent/Child/Search
 
 ```
 D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA>python w1-08-ccp-crypto.py
@@ -210,5 +211,26 @@ crypto map CRYPTO 50 ipsec-isakmp
 
 |
 
+
+====PARENT LEVEL ITEMS in SEARCH for PFS Group2===
+crypto map CRYPTO 20 ipsec-isakmp 
+Parent: True
+Children: False
+Children items: [<IOSCfgLine # 93 ' set peer 2.2.2.1' (parent is # 92)>, <IOSCfgLine # 94 ' set transform-set AES-SHA ' (parent is # 92)>, <IOSCfgLine # 95 ' set pfs group2' (parent is # 92)>, <IOSCfgLine # 96 ' match address VPN-TEST2' (parent is # 92)>]
+crypto map CRYPTO 30 ipsec-isakmp 
+Parent: True
+Children: False
+Children items: [<IOSCfgLine # 98 ' set peer 3.3.3.1' (parent is # 97)>, <IOSCfgLine # 99 ' set transform-set AES-SHA ' (parent is # 97)>, <IOSCfgLine # 100 ' set pfs group2' (parent is # 97)>, <IOSCfgLine # 101 ' match address VPN-TEST3' (parent is # 97)>]
+
+
+
+====PARENT LEVEL ITEMS in SEARCH for !AES===
+crypto map CRYPTO 50 ipsec-isakmp 
+Parent: True
+Children: False
+Children items: [<IOSCfgLine # 108 ' set peer 5.5.5.1' (parent is # 107)>, <IOSCfgLine # 109 ' set transform-set 3DES-SHA ' (parent is # 107)>, <IOSCfgLine # 110 ' set pfs group5' (parent is # 107)>, <IOSCfgLine # 111 ' match address VPN-TEST5' (parent is # 107)>]
+
+
+(applied_python)[cdeluna@ip-172-30-0-4 scratch]$ 
 
 ```
