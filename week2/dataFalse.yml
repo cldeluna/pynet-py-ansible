@@ -1,0 +1,4 @@
+A: a
+B: {C: c, D: d, E: e}
+C: [1, 2, 3, 4, 5]
+D: {interface: Gi0, router: cisco ASR}

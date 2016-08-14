@@ -1,3 +1,4 @@
 # Ingnore TXT and LOG files
 *.txt
 *.log
+*.pyc
