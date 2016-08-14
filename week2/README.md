@@ -3,6 +3,7 @@
 ### Exercise 1 - Python Libraries
 
 a. Verified that both modules were installed
+
 b. Verified versions of both modules
 
 ```
@@ -51,5 +52,46 @@ Working in Progress
 
 ### Exercise 4 - SNMP Basics
 a & b I'm not using the snmp_helper library
+
 c. See snmp_test.py
+Sample Output from snmp_test.py
+
+```
+Claudia@Mac-mini:~/Dropbox/scripts/python/2016/PyNetA/week2$ python snmp_test.py
+
+Usage: snmp_test.py <YAML File to import with device information>
+Example: python snmp_test.py dataFalse.yml
+
+
+Claudia@Mac-mini:~/Dropbox/scripts/python/2016/PyNetA/week2$ python snmp_test.py dataFalse.yml
+[{'ip': '10.1.10.100', 'commstr': 'cisco', 'snmp_port': '161'}, {'ip': '10.1.10.17', 'commstr': 'public', 'snmp_port': '161'}]
+Number of devices to query: 2
+Top level data structure from YAML File: <type 'list'>
+########################################################
+
+        Element level data structure from YAML File: <type 'dict'>
+                OID for sysName: 1.3.6.1.2.1.1.5.0   arctic-sw01.uwaco.net
+
+                Cisco Internetwork Operating System Software 
+IOS (tm) C2940 Software (C2940-I6K2L2Q4-M), Version 12.1(22)EA11, RELEASE SOFTWARE (fc2)
+Copyright (c) 1986-2008 by cisco Systems, Inc.
+Compiled Tue 08-Jan-08 11:14 by amvarma
+
+########################################################
+
+        Element level data structure from YAML File: <type 'dict'>
+                OID for sysName: 1.3.6.1.2.1.1.5.0   arctic-rtr01.uwaco.net
+
+                Cisco IOS Software, 2800 Software (C2800NM-SPSERVICESK9-M), Version 12.4(20)T3, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2009 by Cisco Systems, Inc.
+Compiled Tue 28-Apr-09 15:57 by prod_rel_team
+
+Claudia@Mac-mini:~/Dropbox/scripts/python/2016/PyNetA/week2$ cat dataFalse.yml 
+- {commstr: cisco, ip: 10.1.10.100, snmp_port: '161'}
+- {commstr: public, ip: 10.1.10.17, snmp_port: '161'}
+
+Claudia@Mac-mini:~/Dropbox/scripts/python/2016/PyNetA/week2$ 
+
+```
 
