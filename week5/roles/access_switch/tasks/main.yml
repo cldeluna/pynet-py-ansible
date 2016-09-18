@@ -1,0 +1,7 @@
+---
+# tasks file for access_switch
+- name: Configurations
+  template: src=test.j2 dest=/home/cdeluna/scratch/week5/GEN_CONFIGS/{{item.hostname}}.txt
+  with_items:
+    - { hostname: uwaco-sf-rtr1 }
+    - { hostname: uwaco-sf-rtr2 }

@@ -1,0 +1,6 @@
+---
+- name: Generate Access Switch Configuration Files - Play
+  hosts: local
+
+  roles:
+    - access_switch
