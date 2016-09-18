@@ -1,7 +1,7 @@
 ---
 # tasks file for access_switch
 - name: Configurations
-  template: src=access_switch2.j2 dest=/home/cdeluna/scratch/week5/GEN_CONFIGS/{{item.hostname}}.txt
+  template: src=access_switch3.j2 dest=/home/cdeluna/scratch/week5/GEN_CONFIGS/{{item.hostname}}.txt
   register: vars
   with_items: sw_list
 
