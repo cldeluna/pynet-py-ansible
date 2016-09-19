@@ -12,7 +12,7 @@
             transport=https
 
     - name: create Storage Vlan
-      eos_vlan: name=STORAGE vlanid=1022
+      eos_vlan: name=STORAGE vlanid=102
             username={{ eapi_username }}
             password={{ eapi_password }}
             host={{ eapi_hostname }}

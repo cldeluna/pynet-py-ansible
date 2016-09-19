@@ -43,14 +43,14 @@
             transport=https
             
 
-- name: Configure Ethernet5 to access mode and SERVER vlan
+- name: Configure Ethernet5 as trunk with allowed vlans 
   hosts: arista
   gather_facts: false
 
   tasks:
 
     - name: Task to configure Eth5 access parameters
-      eos_switchport: name={{ item }} mode=access access_vlan=101 
+      eos_switchport: name={{ item }} mode=trunk trunk_native_vlan=1 trunk_allowed_vlans=101,102,103 
             username={{ eapi_username }}
             password={{ eapi_password }}
             host={{ eapi_hostname }}
