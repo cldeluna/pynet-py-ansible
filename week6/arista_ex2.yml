@@ -1,0 +1,70 @@
+---
+- name: Create Arista Vlans
+  hosts: arista
+  gather_facts: false
+
+  tasks:
+    - name: create Server Vlan
+      eos_vlan: name=SERVER vlanid=101
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: create Storage Vlan
+      eos_vlan: name=STORAGE vlanid=1022
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: create vMotion Vlan
+      eos_vlan: name=vMOTION vlanid=103
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+
+- name: Configure Ethernet5 Interface Description
+  hosts: arista
+  gather_facts: false
+
+  tasks:
+    - name: Task to configure Eth5 descirption
+      eos_interface: name=Ethernet5 description="** CdL Test **" 
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+            
+
+- name: Configure Ethernet5 to access mode and SERVER vlan
+  hosts: arista
+  gather_facts: false
+
+  tasks:
+    - name: Task to default interface configuration
+      eos_command: commands="default interface Ethernet5"
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+      register: result
+    - debug: var=result
+
+    - name: Task to configure Eth5 access parameters
+      eos_switchport: name={{ item }} mode=access access_vlan=101 
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+      with_items:
+            - Ethernet5
+

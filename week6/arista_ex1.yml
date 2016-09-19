@@ -1,0 +1,31 @@
+---
+- name: Create Arista Vlans
+  hosts: arista
+
+  tasks:
+    - name: create Server Vlan
+      eos_vlan: name=SERVER vlanid=101
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: create Storage Vlan
+      eos_vlan: name=STORAGE vlanid=1022
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: create vMotion Vlan
+      eos_vlan: name=vMOTION vlanid=103
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+
+            
