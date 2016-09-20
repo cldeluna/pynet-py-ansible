@@ -147,6 +147,81 @@ If you call the script with the --remove option, the VLAN will be removed.
 	1     default                          active    Et2, Et3, Et4, Et5, Et6
 
 
+Exercise 2 on PyNet environment
+--------------
+
+
+**eapi.conf file**
+
+	(applied_python)[cdeluna@ip-172-30-0-4 ~]$ cat .eapi.conf 
+	[connection:pynet-sw4]
+	username: eapi
+	password: 17mendel
+	host: 184.105.247.75
+	transport: https
+
+**Results in PyNet Environment**
+
+	(applied_python)[cdeluna@ip-172-30-0-4 ~]$ pwd
+	/home/cdeluna
+	(applied_python)[cdeluna@ip-172-30-0-4 ~]$ 
+
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py -h
+	usage: arista_ex2.py [-h] [--name NAME_NUM] [--remove REM_VLAN_NUM]
+						 [--verify CHECK_VLAN_NUM] [--device] [--version]
+
+	optional arguments:
+	  -h, --help            show this help message and exit
+	  --name NAME_NUM       Provide the name and the number of the Vlan to add if
+							it does not exist usint the format VLANNAME_VLANNUMBER
+	  --remove REM_VLAN_NUM
+							Store the number of the Vlan to remove if it exists
+	  --verify CHECK_VLAN_NUM
+							Store the number of the Vlan to check
+	  --device              Set to True to display the device that is being worked
+							on
+	  --version             show program's version number and exit
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py -device
+	usage: arista_ex2.py [-h] [--name NAME_NUM] [--remove REM_VLAN_NUM]
+						 [--verify CHECK_VLAN_NUM] [--device] [--version]
+	arista_ex2.py: error: unrecognized arguments: -device
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py -device
+	usage: arista_ex2.py [-h] [--name NAME_NUM] [--remove REM_VLAN_NUM]
+						 [--verify CHECK_VLAN_NUM] [--device] [--version]
+	arista_ex2.py: error: unrecognized arguments: -device
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ clear
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py -h
+	usage: arista_ex2.py [-h] [--name NAME_NUM] [--remove REM_VLAN_NUM]
+						 [--verify CHECK_VLAN_NUM] [--device] [--version]
+
+	optional arguments:
+	  -h, --help            show this help message and exit
+	  --name NAME_NUM       Provide the name and the number of the Vlan to add if
+							it does not exist usint the format VLANNAME_VLANNUMBER
+	  --remove REM_VLAN_NUM
+							Store the number of the Vlan to remove if it exists
+	  --verify CHECK_VLAN_NUM
+							Store the number of the Vlan to check
+	  --device              Set to True to display the device that is being worked
+							on
+	  --version             show program's version number and exit
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py --device
+	The currently configured device is pynet-sw4.
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py --verify 101
+	Vlan 101 is configured on device pynet-sw4
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py --name SERVER_101
+	Vlan 101 is ALREADY configured on device pynet-sw4 and so no action is required.
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py --remove 101
+	Vlan 101 has been removed from device pynet-sw4and verified.
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py --verify 101
+	Vlan 101 is NOT configured on device pynet-sw4
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py --name SERVER_101
+	Vlan 101 has been added to device pynet-sw4and verified.
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ python arista_ex2.py --name SERVER_101
+	Vlan 101 is ALREADY configured on device pynet-sw4 and so no action is required.
+	(applied_python)[cdeluna@ip-172-30-0-4 week7]$ 
+
+
    
 Exercise 3
 -------------- 

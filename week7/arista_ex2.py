@@ -51,7 +51,8 @@ def main():
     :return:
     """
 
-    device_name = "veos-cs01"
+    #device_name = "veos-cs01"
+    device_name = "pynet-sw4"
     dev_conn = pyeapi.connect_to(device_name)
 
     parser = argparse.ArgumentParser()
