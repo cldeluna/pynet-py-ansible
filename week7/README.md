@@ -62,7 +62,7 @@ If you call the script with the --remove option, the VLAN will be removed.
    python eapi_vlan.py --remove 100          # remove VLAN100
 
 
-* This output is from a local environment using a multi host Vagrant veos configuration *
+*This output is from a local environment using a multi host Vagrant veos configuration*
    
 
 **Starting Switch Config**
@@ -102,22 +102,27 @@ If you call the script with the --remove option, the VLAN will be removed.
 	arista_ex2.py 1.0
 
 **Device Option (Extra)**
+
 	D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA\week7>python arista_ex2.py --device
 	The currently configured device is veos-cs01.
 
 **Check Vlan Option (Extra)**
+
 	D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA\week7>python arista_ex2.py --verify 101
 	Vlan 101 is NOT configured on device veos-cs01
 
 **Remove Vlan Option when Vlan does not exists**
+
 	D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA\week7>python arista_ex2.py --remove 101
 	Vlan 101 is NOT configured on device veos-cs01 and so no action is required.
 
 **Add Vlan Option when Vlan does not exist**
+
 	D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA\week7>python arista_ex2.py --name SERVER_101
 	Vlan 101 has been added to device veos-cs01and verified.
 
 **Switch Config after adding vlan**
+
 	veos-cs01#sh vlan
 	VLAN  Name                             Status    Ports
 	----- -------------------------------- --------- -------------------------------
@@ -125,14 +130,17 @@ If you call the script with the --remove option, the VLAN will be removed.
 	101   SERVER                           active
 
 **Add Vlan Option when Vlan does exist**
+
 	D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA\week7>python arista_ex2.py --name SERVER_101
 	Vlan 101 is ALREADY configured on device veos-cs01 and so no action is required.
 
 **Remove Vlan Option when Vlan exists**
+
 	D:\Dropbox (Indigo Wire Networks)\scripts\python\2016\PyNetA\week7>python arista_ex2.py --remove 101
 	Vlan 101 has been removed from device veos-cs01and verified.
 
 **Switch Config after removing vlan**
+
 	veos-cs01#sh vlan
 	VLAN  Name                             Status    Ports
 	----- -------------------------------- --------- -------------------------------
