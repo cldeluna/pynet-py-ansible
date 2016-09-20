@@ -64,7 +64,27 @@ If you call the script with the --remove option, the VLAN will be removed.
 
 *This output is from a local environment using a multi host Vagrant veos configuration*
    
+**eapi.conf file**
 
+	claud@DESKTOP-S41OCM2 MINGW64 ~
+	$ cat .eapi.conf
+	[connection:veos-cs01]
+	host: 10.1.10.221
+	username: vagrant
+	password: vagrant
+	transport: https
+
+	[connection:veos-cs02]
+	host: 10.1.10.222
+	username: vagrant
+	password: vagrant
+	transport: https
+
+
+claud@DESKTOP-S41OCM2 MINGW64 ~
+$
+
+   
 **Starting Switch Config**
 
 	veos-cs01#sh vlan
